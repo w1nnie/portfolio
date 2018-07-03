@@ -1,20 +1,21 @@
 .container {
   padding: 50px;
-  margin-top: 100px;
+  margin-top: 140px;
   font-size: 40px;
   font-weight: lighter;
-  font-family: "Raavi";
+  font-family: "Georgia";
   text-align: center;
 }
 
 .topic {
-  border: solid 1px #222;
+  border: solid 1px #888;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   padding: 10px;
   margin-bottom: 150px;
   background: #CCC;
+  color: #323232;
 }
 
 #about {
