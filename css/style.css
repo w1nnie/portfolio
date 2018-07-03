@@ -1,0 +1,31 @@
+.container {
+  padding: 50px;
+  margin: 30px;
+  font-size: 40px;
+  font-weight: lighter;
+  font-family: "Raavi";
+  text-align: center;
+  width: 200px;
+}
+
+#about {
+  top: 20%;
+  left: 20%;
+  border: solid 1px #222;
+}
+
+#pixelart {
+  float: right;
+}
+
+#illust {
+  top: 60%;
+  left: 20%;
+  float: none;
+}
+
+#program {
+  top: 60%;
+  right: 20%;
+  float: right;
+}
