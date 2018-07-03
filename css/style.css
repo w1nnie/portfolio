@@ -1,31 +1,38 @@
 .container {
   padding: 50px;
-  margin: 30px;
+  margin-top: 100px;
   font-size: 40px;
   font-weight: lighter;
   font-family: "Raavi";
   text-align: center;
-  width: 200px;
+}
+
+.topic {
+  border: solid 1px #222;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  margin-bottom: 150px;
+  background: #CCC;
 }
 
 #about {
-  top: 20%;
-  left: 20%;
-  border: solid 1px #222;
+  top: 25%;
+  margin-left: 30%;
+  float: left;
 }
 
 #pixelart {
-  float: right;
+  top: 25%;
+  margin-left: 60%;
 }
 
 #illust {
-  top: 60%;
-  left: 20%;
-  float: none;
+  margin-left: 30%;
+  float: left;
 }
 
 #program {
-  top: 60%;
-  right: 20%;
-  float: right;
+  margin-left: 60%;
 }
