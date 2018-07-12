@@ -17,14 +17,23 @@ window.onload = function() {
   // }
 
 // 要素の付け足し/書き換え
-  about.onmouseover = function(){
-    pixelart.style.opacity = 0;
-    illust.style.opacity = 0;
-    program.style.opacity = 0;
+for (let j=0; j<topicArray.length; j++){
+  topicArray[j].onmouseover = function(){
+    for (let i=0; i<topicArray.length; i++){
+      console.log("po");
+      if (i !== j){
+        console.log(i);
+        topicArray[i].style.opacity = 0;
+      }
+    }
   }
-  about.onmouseout = function(){
-    pixelart.style.opacity = 1;
-    illust.style.opacity = 1;
-    program.style.opacity = 1;
+  topicArray[j].onmouseout = function(){
+    for (let i=0; i<topicArray.length; i++) {
+      if (i !== j){
+        topicArray[i].style.opacity = 1;
+      }
+    }
   }
+}
+
 }
