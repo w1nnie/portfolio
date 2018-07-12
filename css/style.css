@@ -38,9 +38,10 @@ html{
   float: left;
 }
 
-#about:hover:topic {
+/* #about:hover: {
+  position: absolute;
   background-image: url("img/shf_back_7.png");
-}
+} */
 
 
 #pixelart {
