@@ -1,5 +1,18 @@
-html{
-    background: radial-gradient(#F1F9FF, #D9E7F6);
+#whole {
+  background-image: url("../img/shf_back_7.png");
+  background-size: cover;
+}
+
+#whole::before {
+  background: radial-gradient(rgba(241, 248, 255, 1), rgba(217, 231, 246, 1));
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
 }
 
 .container {
