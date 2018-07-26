@@ -1,23 +1,18 @@
-#whole {
-  background-image: url("../img/shf_back_7.png");
-  background-size: cover;
-}
-
-#whole::before {
+#whole { */
+  /* background-image: url("../img/shf_back_7.png"); */
+  /* background-size: cover; */
   background: radial-gradient(rgba(241, 248, 255, 1), rgba(217, 231, 246, 1));
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
+ }
+
+.el {
+  width: 2rem;
+  height: 2rem;
+  background-color: #FF00FF;
 }
 
 .container {
-  padding: 50px;
-  margin-top: 140px;
+  padding: 15%;
+  /* margin-top: 140px; */
   font-size: 40px;
   font-weight: lighter;
   font-family: "Georgia";
@@ -49,7 +44,7 @@
   top: 25%;
   margin-left: 30%;
   float: left;
-}
+ }
 
 #pixelart {
   top: 25%;

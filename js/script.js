@@ -1,11 +1,19 @@
 window.onload = function() {
-  var whole = document.getElementById("whole");
-  var about = document.getElementById("about");
-  var pixelart = document.getElementById("pixelart");
-  var illust = document.getElementById("illust");
-  var program = document.getElementById("program");
+  let images = {
+    "about":new Image(),
+    "pixelart":new Image(),
+    "illust":new Image(),
+    "program":new Image(),
+  }
+  // images["about"].src = "../img/shf_back_7.png"
 
-  var topicArray = [about, pixelart, illust, program];
+  let whole = document.getElementById("whole");
+  let about = document.getElementById("about");
+  let pixelart = document.getElementById("pixelart");
+  let illust = document.getElementById("illust");
+  let program = document.getElementById("program");
+
+  let topicArray = [about, pixelart, illust, program];
 
   // css自体の有効化/無効化
   // about.onmouseover = function(){
@@ -21,7 +29,6 @@ window.onload = function() {
   for (let j = 0; j < topicArray.length; j++) {
     topicArray[j].onmouseover = function() {
       for (let i = 0; i < topicArray.length; i++) {
-        // console.log("po");
         if (i !== j) {
           console.log(i);
           topicArray[i].style.opacity = 0;
@@ -43,3 +50,14 @@ window.onload = function() {
   // }
 
 }
+
+// const createImg = () => {
+//   let o = document.createElement("img");
+//   o.setAttribute("id", "aboutbg");
+//   o.setAttribute("src", "../img/shf_back_7.png");
+//   document.getElementById("whole").appendChild(o);
+// }
+// const deleteImg = () => {
+//   o = document.getElementById("aboutbg");
+//   document.getElementById("aboutbg").removeChild(o);
+// }
