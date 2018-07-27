@@ -23,6 +23,8 @@ window.onload = function() {
         case 0:
           layer1.style.background = "url(img/fujimizaka.jpg)";
           layer1.style.backgroundSize = "cover";
+
+
           break;
         case 1:
           layer1.style.background = "url(img/pixelartBack.png)";
@@ -34,6 +36,16 @@ window.onload = function() {
           break;
         default:
       }
+
+      let lineDrawing = anime({
+        targets: '.lineDrawing path',
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'easeInOutSine',
+        duration: 1500,
+        delay: function(el, i){return i*2500},
+        direction: 'alternate',
+      });
+
       // layer2 opacity -> 0
       let aboutOverAnimation = anime({
         targets: '#layer2',
