@@ -1,36 +1,45 @@
-#whole { */
-  /* background-image: url("../img/shf_back_7.png"); */
-  /* background-size: cover; */
-  background: radial-gradient(rgba(241, 248, 255, 1), rgba(217, 231, 246, 1));
- }
+html, body, #layer1 {
+  width: 100vw;
+  height: 100vh;
+}
 
-.el {
-  width: 2rem;
-  height: 2rem;
-  background-color: #FF00FF;
+#layer2 {
+  background: rgba(241, 248, 255, 1);
+  width: 100vw;
+  height: 100vh;
 }
 
 .container {
-  padding: 15%;
-  /* margin-top: 140px; */
-  font-size: 40px;
+  /* padding: 15%; */
+  font-size: 250%;
   font-weight: lighter;
   font-family: "Georgia";
-  text-align: center;
-  vertical-align: middle;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 80%;
+  height: 80%;
+  align-content: center;
 }
 
 .topic {
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
   border: solid 1px #A2A2E2;
   border-radius: 50%;
   width: 45px;
   height: 45px;
   padding: 10px;
-  margin-bottom: 150px;
+  margin: 15%;
   background: #F1F9FF;
   color: #A2A2E2;
   transition: .4s;
   box-shadow: 0px 0px 0px 1px #F1F9FF;
+  display: inline-block;
 }
 
 .topic:hover {
@@ -38,24 +47,4 @@
   color: #F1F9FF;
   border: solid 1px #F1F9FF;
   box-shadow: 0px 0px 0px 1px #A2A2E2;
-}
-
-#about {
-  top: 25%;
-  margin-left: 30%;
-  float: left;
- }
-
-#pixelart {
-  top: 25%;
-  margin-left: 60%;
-}
-
-#illust {
-  margin-left: 30%;
-  float: left;
-}
-
-#program {
-  margin-left: 60%;
 }

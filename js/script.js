@@ -5,9 +5,9 @@ window.onload = function() {
     "illust":new Image(),
     "program":new Image(),
   }
-  // images["about"].src = "../img/shf_back_7.png"
+  images["about"].src = "img/illustBack.png"
 
-  let whole = document.getElementById("whole");
+  let layer1 = document.getElementById("layer1");
   let about = document.getElementById("about");
   let pixelart = document.getElementById("pixelart");
   let illust = document.getElementById("illust");
@@ -15,19 +15,34 @@ window.onload = function() {
 
   let topicArray = [about, pixelart, illust, program];
 
-  // css自体の有効化/無効化
-  // about.onmouseover = function(){
-  //   // document.getElementById("style").disabled = true;
-  //   document.getElementById("about_after").disabled = false;
-  // }
-  　 // about.onmouseout = function(){
-  //   // document.getElementById("style").disabled = false;
-  //   document.getElementById("about_after").disabled = true;
-  // }
-
   // 要素の付け足し/書き換え
   for (let j = 0; j < topicArray.length; j++) {
     topicArray[j].onmouseover = function() {
+
+      switch (j) {
+        case 0:
+          layer1.style.background = "url(img/fujimizaka.jpg)";
+          layer1.style.backgroundSize = "cover";
+          break;
+        case 1:
+          layer1.style.background = "url(img/pixelartBack.png)";
+          layer1.style.backgroundSize = "cover";
+          break;
+        case 2:
+          layer1.style.background = "url(img/illustBack.png)";
+          layer1.style.backgroundSize = "cover";
+          break;
+        default:
+      }
+      // layer2 opacity -> 0
+      let aboutOverAnimation = anime({
+        targets: '#layer2',
+        background: 'rgba(217,231,246,0)',
+        easing: 'easeOutElastic',
+        elasticity: '0'
+      });
+
+      // the others opacity -> 0
       for (let i = 0; i < topicArray.length; i++) {
         if (i !== j) {
           console.log(i);
@@ -35,7 +50,17 @@ window.onload = function() {
         }
       }
     }
+
     topicArray[j].onmouseout = function() {
+      // layer2 opacity -> 1
+      let aboutOutAnimation = anime({
+        targets: '#layer2',
+        background: 'rgba(241,248,255,1)',
+        easing: 'easeOutElastic',
+        elasticity: '0'
+      });
+
+      // the other's opacity -> 1
       for (let i = 0; i < topicArray.length; i++) {
         if (i !== j) {
           topicArray[i].style.opacity = 1;
@@ -43,21 +68,7 @@ window.onload = function() {
       }
     }
   }
-
-  // about.onmouseover = function() {
-  //   console.log("hei");
-  //   whole.style.background = "green";
-  // }
-
 }
-
-// const createImg = () => {
-//   let o = document.createElement("img");
-//   o.setAttribute("id", "aboutbg");
-//   o.setAttribute("src", "../img/shf_back_7.png");
-//   document.getElementById("whole").appendChild(o);
-// }
-// const deleteImg = () => {
-//   o = document.getElementById("aboutbg");
-//   document.getElementById("aboutbg").removeChild(o);
-// }
+window.onerror = function(msg, url, line, col, error) {
+    console.log(msg); // エラーの内容
+};
