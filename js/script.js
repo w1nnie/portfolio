@@ -12,6 +12,7 @@ window.onload = function() {
   let pixelart = document.getElementById("pixelart");
   let illust = document.getElementById("illust");
   let program = document.getElementById("program");
+  let svg = document.getElementsByTagName("svg");
 
   let topicArray = [about, pixelart, illust, program];
 
@@ -23,12 +24,12 @@ window.onload = function() {
         case 0:
           layer1.style.background = "url(img/fujimizaka.jpg)";
           layer1.style.backgroundSize = "cover";
-
-
+          aboutLine();
           break;
         case 1:
           layer1.style.background = "url(img/pixelartBack.png)";
           layer1.style.backgroundSize = "cover";
+          pixelartLine();
           break;
         case 2:
           layer1.style.background = "url(img/illustBack.png)";
@@ -36,15 +37,6 @@ window.onload = function() {
           break;
         default:
       }
-
-      let lineDrawing = anime({
-        targets: '.lineDrawing path',
-        strokeDashoffset: [anime.setDashoffset, 0],
-        easing: 'easeInOutSine',
-        duration: 1500,
-        delay: function(el, i){return i*2500},
-        direction: 'alternate',
-      });
 
       // layer2 opacity -> 0
       let aboutOverAnimation = anime({
@@ -57,7 +49,6 @@ window.onload = function() {
       // the others opacity -> 0
       for (let i = 0; i < topicArray.length; i++) {
         if (i !== j) {
-          console.log(i);
           topicArray[i].style.opacity = 0;
         }
       }
@@ -72,6 +63,10 @@ window.onload = function() {
         elasticity: '0'
       });
 
+      for (let k = 0; k < svg.length; k++){
+        svg[k].style.opacity = 0;
+      }
+
       // the other's opacity -> 1
       for (let i = 0; i < topicArray.length; i++) {
         if (i !== j) {
@@ -83,4 +78,32 @@ window.onload = function() {
 }
 window.onerror = function(msg, url, line, col, error) {
     console.log(msg); // エラーの内容
+};
+
+let aboutLine = () =>{
+  let lineDrawing = anime({
+    targets: '.lineAbout path',
+    strokeDashoffset: [anime.setDashoffset, 0],
+    easing: 'easeOutCubic',
+    duration: 1200,
+    delay: function(el, i){return i*100},
+  });
+  let lineOpacity = anime({
+    targets: '.lineAbout svg',
+    opacity: 1
+  });
+};
+
+let pixelartLine = () =>{
+  let lineDrawing = anime({
+    targets: '.linePixelart path',
+    strokeDashoffset: [anime.setDashoffset, 0],
+    easing: 'easeOutCubic',
+    duration: 800,
+    delay: function(el, i){return i*50},
+  });
+  let lineOpacity = anime({
+    targets: '.linePixelart svg',
+    opacity: 1
+  });
 };
