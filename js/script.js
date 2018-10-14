@@ -1,80 +1,85 @@
 window.onload = function() {
-  let images = {
-    "about":new Image(),
-    "pixelart":new Image(),
-    "illust":new Image(),
-    "program":new Image(),
-  }
-  images["about"].src = "img/illustBack.png"
 
   let layer1 = document.getElementById("layer1");
-  let about = document.getElementById("about");
-  let pixelart = document.getElementById("pixelart");
-  let illust = document.getElementById("illust");
-  let program = document.getElementById("program");
+  let topic = document.getElementsByClassName("topic");
+  let bg = document.getElementsByClassName("bg");
   let svg = document.getElementsByTagName("svg");
+  let header = document.getElementsByTagName("header")
+  let headTopics = document.getElementById("headTopics");
+  findLi = headTopics.children;
 
-  let topicArray = [about, pixelart, illust, program];
 
-  // 要素の付け足し/書き換え
-  for (let j = 0; j < topicArray.length; j++) {
-    topicArray[j].onmouseover = function() {
+  for (let j = 0; j < topic.length; j++) {
+    //マウスオーバー処理
+    topic[j].onmouseover = function() {
+
+      svg[j].style.display = "block";
+      bg[j].style.display = "block";
 
       switch (j) {
         case 0:
-          layer1.style.background = "url(img/fujimizaka.jpg)";
-          layer1.style.backgroundSize = "cover";
+          bgAbout.style.opacity = 1;
           aboutLine();
           break;
         case 1:
-          layer1.style.background = "url(img/pixelartBack.png)";
-          layer1.style.backgroundSize = "cover";
+          bgPixelart.style.opacity = 1;
           pixelartLine();
           break;
         case 2:
-          layer1.style.background = "url(img/illustBack.png)";
-          layer1.style.backgroundSize = "cover";
+          bgIllust.style.opacity = 1;
+          illustLine();
+          break;
+        case 3:
+          bgProgram.style.opacity = 1;
+          programLine();
           break;
         default:
+          break;
       }
 
-      // layer2 opacity -> 0
-      let aboutOverAnimation = anime({
-        targets: '#layer2',
-        background: 'rgba(217,231,246,0)',
-        easing: 'easeOutElastic',
-        elasticity: '0'
-      });
-
       // the others opacity -> 0
-      for (let i = 0; i < topicArray.length; i++) {
+      for (let i = 0; i < topic.length; i++) {
         if (i !== j) {
-          topicArray[i].style.opacity = 0;
+          topic[i].style.opacity = 0;
         }
       }
     }
 
-    topicArray[j].onmouseout = function() {
-      // layer2 opacity -> 1
-      let aboutOutAnimation = anime({
-        targets: '#layer2',
-        background: 'rgba(241,248,255,1)',
-        easing: 'easeOutElastic',
-        elasticity: '0'
-      });
+    //マウスアウト処理
+    topic[j].onmouseout = function() {
 
       for (let k = 0; k < svg.length; k++){
         svg[k].style.opacity = 0;
+        svg[k].style.display = "none";
       }
 
+      bg[j].style.opacity = 0;
+
       // the other's opacity -> 1
-      for (let i = 0; i < topicArray.length; i++) {
+      for (let i = 0; i < topic.length; i++) {
         if (i !== j) {
-          topicArray[i].style.opacity = 1;
+          topic[i].style.opacity = 1;
         }
       }
     }
+
+    //マウスクリック処理
+    topic[j].onclick = function() {
+      layer1.style.opacity = 0;
+      layer1.style.pointerEvents = "none";
+      header[0].style.display = "block";
+      header[0].style.pointerEvents = "auto";
+      header[0].style.opacity = 1;
+    }
   }
+
+  findLi[0].onclick = function() {
+    layer1.style.opacity = 1;
+    layer1.style.pointerEvents = "auto";
+    header[0].style.opacity = 0;
+    header[0].style.pointerEvents = "none";
+  }
+
 }
 window.onerror = function(msg, url, line, col, error) {
     console.log(msg); // エラーの内容
@@ -92,6 +97,7 @@ let aboutLine = () =>{
     targets: '.lineAbout svg',
     opacity: 1
   });
+
 };
 
 let pixelartLine = () =>{
@@ -104,6 +110,34 @@ let pixelartLine = () =>{
   });
   let lineOpacity = anime({
     targets: '.linePixelart svg',
+    opacity: 1
+  });
+};
+
+let illustLine = () =>{
+  let lineDrawing = anime({
+    targets: '.lineIllust path',
+    strokeDashoffset: [anime.setDashoffset, 0],
+    easing: 'easeOutCubic',
+    duration: 1100,
+    delay: function(el, i){return i*80},
+  });
+  let lineOpacity = anime({
+    targets: '.lineIllust svg',
+    opacity: 1
+  });
+};
+
+let programLine = () =>{
+  let lineDrawing = anime({
+    targets: '.lineProgram path',
+    strokeDashoffset: [anime.setDashoffset, 0],
+    easing: 'easeOutCubic',
+    duration: 1100,
+    delay: function(el, i){return i*80},
+  });
+  let lineOpacity = anime({
+    targets: '.lineProgram svg',
     opacity: 1
   });
 };

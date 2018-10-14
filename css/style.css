@@ -3,8 +3,13 @@ html, body, #layer1 {
   height: 100vh;
 }
 
+#layer1 {
+  transition: .7s;
+}
+
 #layer2 {
-  background: rgba(241, 248, 255, 1);
+  /* background: rgba(241, 248, 255, 1); */
+  background: radial-gradient(#F1F9FF, #DAE1F3);
   width: 100vw;
   height: 100vh;
 }
@@ -41,6 +46,7 @@ html, body, #layer1 {
   box-shadow: 0px 0px 0px 1px #F1F9FF;
   display: inline-block;
   cursor: pointer;
+  user-select: none;
 }
 
 .topic:hover {
@@ -67,6 +73,16 @@ html, body, #layer1 {
   right: 10%;
 }
 
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: 0.5s;
+  width: 100vw;
+  height: 100vh;
+}
+
 svg {
   opacity: 0;
   pointer-events: none;
@@ -79,4 +95,6 @@ svg {
   width: 50%;
   height: 50%;
   transition: .4s;
+  background-color: rgba(0,20,30,0.5);
+  border-radius: 3%;
 }
