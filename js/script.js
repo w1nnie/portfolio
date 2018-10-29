@@ -7,6 +7,7 @@ window.onload = function() {
   let header = document.getElementsByTagName("header")
   let headTopics = document.getElementById("headTopics");
   findLi = headTopics.children;
+  let pageAbout = document.getElementById("pageAbout");
 
 
   for (let j = 0; j < topic.length; j++) {
@@ -64,20 +65,25 @@ window.onload = function() {
     }
 
     //マウスクリック処理
-    topic[j].onclick = function() {
+    topic[0].onclick = function() {
       layer1.style.opacity = 0;
       layer1.style.pointerEvents = "none";
       header[0].style.display = "block";
       header[0].style.pointerEvents = "auto";
       header[0].style.opacity = 1;
+      pageAbout.style.display = "block";
+      pageAbout.style.opacity = 1;
+      layer1.style.height = 0;
     }
   }
 
   findLi[0].onclick = function() {
     layer1.style.opacity = 1;
     layer1.style.pointerEvents = "auto";
+    layer1.style.height = "auto";
     header[0].style.opacity = 0;
     header[0].style.pointerEvents = "none";
+    pageAbout.style.display = "none";
   }
 
 }

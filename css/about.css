@@ -1,3 +1,45 @@
-html {
-  background: #444;
+
+#pageAbout {
+  display: none;
+  height: 100vh;
+  transition: .4s;
+}
+
+.aboutBg {
+  overflow: hidden;
+  position: absolute;
+  width: 100vw;
+  height: 425vh;
+  z-index: -1;
+}
+
+.ab {
+  width: 100vw;
+  height: 85vh;
+}
+
+.name {
+  background-color: rgba(255,255,255,0.4);
+  font-size: 230px;
+  margin-top: 15vh;
+}
+
+.belongs {
+  background-color: rgba(255,255,255,0.5);
+  font-size: 100px;
+}
+
+.qual {
+  background-color: rgba(255,255,255,0.6);
+  font-size: 100px;
+}
+
+.likes {
+  background-color: rgba(255,255,255,0.7);
+  font-size: 100px;
+}
+
+.social {
+  background-color: rgba(255,255,255,0.8);
+  font-size: 100px;
 }

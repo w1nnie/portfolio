@@ -1,10 +1,11 @@
 header {
   width: 100vw;
-  height: 100px;
-  background: #F1F9FF;
+  height: 15vh;
+  background: rgba(241,249,255,0.7);
   position: fixed;
   display: none;
   transition: .4s;
+  z-index: 1000;
 }
 
 header #headTopics {
@@ -13,7 +14,7 @@ header #headTopics {
   position: absolute;
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 3vh;
 }
 
 header .item {
