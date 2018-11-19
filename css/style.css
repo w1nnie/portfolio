@@ -95,6 +95,7 @@ svg {
   width: 50%;
   height: 50%;
   transition: .4s;
-  background-color: rgba(0,20,30,0.5);
+  background-color: rgba(10,90,170,0.3);
+  mix-blend-mode: color-dodge;
   border-radius: 3%;
 }
