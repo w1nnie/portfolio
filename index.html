@@ -6,22 +6,15 @@
   <title>portfolio</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/about.css">
+  <script src="js/vue.js"></script>
 </head>
 
 <body>
+  <div id="example">
+  </div>
 
-  <header>
-    <div id = "headTopics">
-      <div class="item">T</div>
-      <div class="item">A</div>
-      <div class="item">P</div>
-      <div class="item">A</div>
-      <div class="item">P</div>
-    </div>
-  </header>
-  <div id="layer1">
+  <!-- <div id="layer1">
     <div class="backgrounds">
       <img class="bg" id="bgAbout" src="img/fujimizaka.jpg">
       <img class="bg" id="bgPixelart" src="img/pixelartBack.png">
@@ -30,7 +23,7 @@
     </div>
     <div id="layer2">
       <div class="container">
-        <div class="topic" id="about">A</div>
+        <a href="about.html" class="topic" id="about" >A</a>
         <div class="lineAbout">
           <svg viewBox="-10 0 310 130">
             <g fill="none" fill-rule="evenodd" stroke="rgb(255,255,255)">
@@ -43,7 +36,8 @@
             </g>
           </svg>
         </div>
-        <div class="topic" id="pixelart">P</div>
+
+        <a href="pixelart.html" class="topic" id="pixelart">P</a>
         <div class="linePixelart">
           <svg viewBox="-1 0 362 100">
             <g fill="none" fill-rule="evenodd" stroke="rgb(255,255,255)">
@@ -67,7 +61,12 @@
             </g>
           </svg>
         </div>
-        <div class="topic" id="illust">I</div>
+        <div class="setPixelart">
+          <img class="rellax setImage woofa" src="img/woofa1024.png">
+          <img class="rellax setImage uchi" src="img/uchinoko.png">
+        </div>
+
+        <a href="illust.html" class="topic" id="illust">I</a>
         <div class="lineIllust">
           <svg viewBox="-1 0 362 100">
             <g fill="none" fill-rule="evenodd" stroke="rgb(255,255,255)">
@@ -82,7 +81,8 @@
             </g>
           </svg>
         </div>
-        <div class="topic" id="program">P</div>
+
+        <a href="program.html" class="topic" id="program">P</a>
         <div class="lineProgram">
           <svg viewBox="-1 0 362 100">
             <g fill="none" fill-rule="evenodd" stroke="rgb(255,255,255)">
@@ -101,32 +101,11 @@
         </div>
       </div>
     </div>
-  </div>
-  <div id="pageAbout">
-    <img class = "aboutBg" src="img/109_3.jpg">
-    <div class="ab name">
-      なまえ
-    </div>
-    <div class="ab belongs">
-      しょぞく
-    </div>
-    <div class="ab qual">
-      しかく
-    </div>
-    <div class="ab likes">
-      すき
-    </div>
-    <div class="ab social">
-      そー
-    </div>
+  </div> -->
 
-  </div>
+  <script src="js/index.js"></script>
   <script src="js/anime.min.js"></script>
   <script src="js/script.js"></script>
-  <script src="js/rellax.min.js"></script>
-  <script>
-    var rellax = new Rellax(' .rellax ');
-  </script>
   <script src="js/about.js"></script>
 </body>
 

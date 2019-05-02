@@ -47,6 +47,7 @@ html, body, #layer1 {
   display: inline-block;
   cursor: pointer;
   user-select: none;
+  text-decoration: none;
 }
 
 .topic:hover {
@@ -95,7 +96,32 @@ svg {
   width: 50%;
   height: 50%;
   transition: .4s;
-  background-color: rgba(10,90,170,0.3);
+  background: radial-gradient(#04090A, #122731);
   mix-blend-mode: color-dodge;
   border-radius: 3%;
+}
+
+.setImage {
+  opacity: 1;
+  position: absolute;
+  border-radius: 3%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 0.2;
+}
+
+.woofa {
+  width: 20%;
+  height: auto;
+  transform: rotate(30deg);
+  top: -10%;
+  left: 50%;
+  border: solid 1px rgba(255,255,255,0.5);
+}
+
+.uchi {
+  width: 20%;
+  top: 30%;
+  left: 90%;
+  height: auto;
 }

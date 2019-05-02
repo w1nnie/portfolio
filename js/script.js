@@ -4,10 +4,11 @@ window.onload = function() {
   let topic = document.getElementsByClassName("topic");
   let bg = document.getElementsByClassName("bg");
   let svg = document.getElementsByTagName("svg");
-  let header = document.getElementsByTagName("header")
+  // let header = document.getElementsByTagName("header")
   let headTopics = document.getElementById("headTopics");
-  findLi = headTopics.children;
-  let pageAbout = document.getElementById("pageAbout");
+  // findLi = headTopics.children;
+  // let pageAbout = document.getElementById("pageAbout");
+  // let woofa = document.getElementsByClassName("woofa");
 
 
   for (let j = 0; j < topic.length; j++) {
@@ -25,6 +26,8 @@ window.onload = function() {
         case 1:
           bgPixelart.style.opacity = 1;
           pixelartLine();
+          setWoofa();
+          setUchi();
           break;
         case 2:
           bgIllust.style.opacity = 1;
@@ -56,6 +59,19 @@ window.onload = function() {
 
       bg[j].style.opacity = 0;
 
+      switch (j) {
+        case 0:
+          break;
+        case 1:
+          // woofa[0].style.opacity = 0.5;
+          // woofa[0].style.mixBlendMode = "overlay";
+          break;
+        case 2:
+          break;
+        case 3:
+          break;
+      }
+
       // the other's opacity -> 1
       for (let i = 0; i < topic.length; i++) {
         if (i !== j) {
@@ -77,14 +93,14 @@ window.onload = function() {
     }
   }
 
-  findLi[0].onclick = function() {
-    layer1.style.opacity = 1;
-    layer1.style.pointerEvents = "auto";
-    layer1.style.height = "auto";
-    header[0].style.opacity = 0;
-    header[0].style.pointerEvents = "none";
-    pageAbout.style.display = "none";
-  }
+  // findLi[0].onclick = function() {
+  //   layer1.style.opacity = 1;
+  //   layer1.style.pointerEvents = "auto";
+  //   layer1.style.height = "auto";
+  //   header[0].style.opacity = 0;
+  //   header[0].style.pointerEvents = "none";
+  //   pageAbout.style.display = "none";
+  // }
 
 }
 window.onerror = function(msg, url, line, col, error) {
@@ -144,6 +160,23 @@ let programLine = () =>{
   });
   let lineOpacity = anime({
     targets: '.lineProgram svg',
+    opacity: 1
+  });
+};
+
+let setWoofa = () =>{
+  let woofaCutin = anime({
+    targets: '.woofa',
+    easing: 'easeOutCubic',
+    opacity: 1,
+    // mixBlendMode: 'screen',
+  });
+};
+
+let setUchi = () =>{
+  let uchiCutin = anime({
+    targets: '.uchi',
+    easing: 'easeOutCubic',
     opacity: 1
   });
 };
