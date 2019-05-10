@@ -1,8 +1,5 @@
 var po = new Vue({
   data: {
-    a: 1
+    isActive: true 
   },
-  updated: function (){
-    console.log('a is: ' + this.a)
-  }
 })
