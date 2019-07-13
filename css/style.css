@@ -96,7 +96,7 @@ svg {
   width: 50%;
   height: 50%;
   transition: .4s;
-  background: radial-gradient(#04090A, #122731);
+  background: radial-gradient(#04090A, #000);
   mix-blend-mode: color-dodge;
   border-radius: 3%;
 }
